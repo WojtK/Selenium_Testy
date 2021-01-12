@@ -4,6 +4,7 @@ import Methods.Screenshoot;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +16,9 @@ public class YPT_7507 extends Logging {
     String username1 = "9999900018";
     String password1 = "0018";
 
+    org.slf4j.Logger logger = LoggerFactory.getLogger(getClass());
+
+    // slf4j wedlug najstarszych gorali jest lepszy od log4j
 
     @Test
     public void AboutApplication() throws IOException, InterruptedException {
@@ -26,7 +30,7 @@ public class YPT_7507 extends Logging {
         Logging.Log_In(driver,username1,password1);
         log.info("Zalogowano się username:"+username1+" password:"+password1);
         Screenshoot.Screenshoot(driver,"SCR-Login");
-
+        logger.info("Password: {}", password1);
         driver.get("https://devfrontendtv.sdqac.rd.tp.pl/settings/about_application");
 
         driver.findElement(By.id("about_btn_tos")).click();
@@ -52,6 +56,7 @@ public class YPT_7507 extends Logging {
 
         driver.quit();
     }
+
     @Test
     public void Animations() throws IOException, InterruptedException {
         log.info("<----- Test 7507 - Animations");

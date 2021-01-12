@@ -96,6 +96,10 @@ public class Selenium
         PrintWriter writer = new PrintWriter(new File("./logfile2.log"));
         writer.print("");
         writer.close();
+
+       // org.slf4j.Logger logger = LoggerFactory.getLogger(Selenium.class);
+       // logger.info("Hello World");
+
         Logger log = Logger.getRootLogger();
         new YPT_7507().AboutApplication();
         new YPT_7507().AboutApplication();
