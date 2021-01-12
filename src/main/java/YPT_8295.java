@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,10 +15,11 @@ public class YPT_8295 {
     String username1 = "9999900018";
     String password1 = "0018";
     String url = "https://devfrontendtv.sdqac.rd.tp.pl/YPT-8295/landing_page";
+    static Logger log = Logger.getLogger(YPT_8295.class.getName());
 
     @Test
     public void OTGActivation() throws IOException, InterruptedException {
-
+        log.info("<----- SCENARIUSZ Nagrania_YPT6450: Nagrania - ekran szczegółów - usuwanie/anulowanie.");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(url);

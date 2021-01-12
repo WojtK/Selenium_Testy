@@ -1,5 +1,6 @@
 import Methods.Logging;
 import Methods.Screenshoot;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,10 +16,11 @@ public class YPT_7507 {
     String username1 = "9999900018";
     String password1 = "0018";
     String url = "https://devfrontendtv.sdqac.rd.tp.pl/";
+    static Logger log = Logger.getLogger(YPT_7507.class.getName());
 
     @Test
     public void AboutApplication() throws IOException, InterruptedException {
-
+        log.info("<----- Test 7507 - About application");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(url);

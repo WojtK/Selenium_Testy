@@ -1,4 +1,9 @@
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 //przyklad zaladowania elementow do listy
@@ -87,7 +92,11 @@ public class Selenium
 */
 
     public static void main(String[] args) throws InterruptedException, IOException {
-
+        PrintWriter writer = new PrintWriter(new File("./logfile2.log"));
+        writer.print("");
+        writer.close();
+        new YPT_7507();
+        Result result = JUnitCore.runClasses(Starter.class);
     }
 
 }

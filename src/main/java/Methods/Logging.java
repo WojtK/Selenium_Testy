@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
-
+//dorzucic loggera do tych prawdziwych testow 'import org.apache.log4j.Logger;'
 public class Logging {
 
        public static void Log_In(WebDriver driver,String username,String password) throws InterruptedException {
