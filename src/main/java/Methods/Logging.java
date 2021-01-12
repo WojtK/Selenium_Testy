@@ -1,13 +1,17 @@
 package Methods;
 
-
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
+
 //dorzucic loggera do tych prawdziwych testow 'import org.apache.log4j.Logger;'
+//klasa YPT_7507 jest pokryta loggerami
 public class Logging {
+
+       public static Logger log = Logger.getRootLogger();
 
        public static void Log_In(WebDriver driver,String username,String password) throws InterruptedException {
 

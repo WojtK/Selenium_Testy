@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 
@@ -95,7 +96,9 @@ public class Selenium
         PrintWriter writer = new PrintWriter(new File("./logfile2.log"));
         writer.print("");
         writer.close();
-        new YPT_7507();
+        Logger log = Logger.getRootLogger();
+        new YPT_7507().AboutApplication();
+        new YPT_7507().AboutApplication();
         Result result = JUnitCore.runClasses(Starter.class);
     }
 
