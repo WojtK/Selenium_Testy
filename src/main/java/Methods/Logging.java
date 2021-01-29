@@ -14,12 +14,13 @@ public class Logging {
        public static Logger log = Logger.getRootLogger();
 
        public static void Log_In(WebDriver driver,String username,String password) throws InterruptedException {
-
+              TimeUnit.SECONDS.sleep(1);
               WebElement politics = driver.findElement(By.className("btn-accept"));
 
               if (politics.isDisplayed())
                      politics.click();
-
+              TimeUnit.SECONDS.sleep(2);
+             // driver.findElement(By.cssSelector("[data-id='welcome_btn_login']")).click();
               driver.findElement(By.id("welcome_btn_login")).click();
               //driver.findElement(By.id("")).click();
               driver.findElement(By.name("username")).sendKeys(username);
@@ -30,10 +31,10 @@ public class Logging {
               driver.findElement(By.id("profile_chooser_image_frame")).click();
            //   TimeUnit.SECONDS.sleep(2);
 
-              boolean parental = driver.findElements(By.xpath("/html/body/div[4]/div[2]/div/div/div[2]/div/input")).size() > 0;
+              boolean parental = driver.findElements(By.id("parental_dialog_title")).size() > 0;
               if (parental) {
-                     driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[2]/div/input")).sendKeys("2222");
-                     driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[3]/div[2]/span")).click();
+                     driver.findElement(By.id("parental_dialog_input")).sendKeys("1111");
+                     driver.findElement(By.id("parental_dialog_btn_accept")).click();
               }
            //   TimeUnit.SECONDS.sleep(2);
        }
@@ -41,7 +42,7 @@ public class Logging {
        public static void Log_out(WebDriver driver) throws InterruptedException {
           driver.findElement(By.id("epgChannelCategoriesDropdown")).click();
        //   TimeUnit.SECONDS.sleep(2);
-          driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/header/div[2]/div[4]/div/ul/div[6]")).click();
+          driver.findElement(By.xpath("/html/body/div[1]/div/div[4]/header/div[2]/div[4]/div/ul/div[4]")).click();
        }
 
 }

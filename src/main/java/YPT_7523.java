@@ -13,7 +13,7 @@ public class YPT_7523 {
     String password = "4365";
     String username1 = "9999900018";
     String password1 = "0018";
-    String url = "https://devfrontendtv.sdqac.rd.tp.pl/";
+    String url = "https://devfrontendtv.sdqac.rd.tp.pl/YPT-7523/landing_page";
 
 
 

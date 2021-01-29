@@ -4,7 +4,7 @@ Feature: sign in to my account
 
   Scenario Outline: Log in with valid data
     Given  user is on Orange TV Go website
-    When  user fills valid username <username> and valid password <password> and submits it
+    When  user fills valid username "<username>" and valid password "<password>" and submits it
     Then  user can see my zone
 
     Examples:
@@ -14,7 +14,7 @@ Feature: sign in to my account
 
   Scenario Outline: Log in with invalid data
     Given user is on Orange TV Go website
-    When user fills invalid username <invalidusername> and/or invalid password <invalidpassword> and submits it
+    When user fills invalid username "<invalidusername>" and/or invalid password "<invalidpassword>" and submits it
     Then User can see alert about invalid data
     Examples:
       |invalidusername | invalidpassword |
@@ -23,10 +23,10 @@ Feature: sign in to my account
       | 9999999999 | 4365 |
 
   Scenario Outline: Logout
-    Given user is on Orange TV Go website
-    When user fills valid username <username> and valid password <password> and submits it
+    Given user is on Orange TV Go website "<url>"
+    When user fills valid username "<username>" and valid password "<password>" and submits it
     Then User logout
     Examples:
-      | username | password |
-      | 9999999088 | 4365   |
-      | 9999999086 | 9474   |
+      | username | password | url |
+      | 9999900018 | 0018   | https://tvgo.ppd.orange.pl/landing_page |
+      | 9999900018 | 0018   | https://tvgo.ppd.orange.pl/landing_page |
